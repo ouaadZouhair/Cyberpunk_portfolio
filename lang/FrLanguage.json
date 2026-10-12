@@ -1,0 +1,117 @@
+{
+    "navigation": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "projects": "Projets",
+    "work": "Projets",
+    "contact": "Contact",
+    "available": "Ouvert aux projets",
+    "availableShort": "Disponible",
+    "systemOnline": "Système en ligne",
+    "primary": "Navigation principale",
+    "mobile": "Navigation mobile",
+    "openMenu": "Ouvrir le menu de navigation",
+    "closeMenu": "Fermer le menu de navigation",
+    "switchLanguage": "Passer la langue en {{language}}",
+    "previous": "Section précédente",
+    "next": "Section suivante",
+    "sectionNavigation": "Navigation entre sections"
+  },
+  "hero": {
+    "hello": "Bonjour_Le_Monde",
+    "title": "Développeur Web",
+    "subtitle": {
+      "design": "Design",
+      "code": "Code",
+      "level": "Evoluer"
+    },
+    "online": "En ligne",
+    "description": "Je crée des sites modernes, rapides et fonctionnels pour booster votre business et le mettre en ligne.",
+    "connect": "Me Contacter",
+    "view_projects": "Voir les Projets"
+  },
+  "about": {
+    "title": "mon parcours",
+    "intro": "En 2020, j’ai découvert le développement web par curiosité… et cette curiosité est vite devenue une véritable passion. Aujourd’hui, avec plus de 2 ans d’expérience, je prends plaisir à transformer des idées en expériences digitales modernes, rapides et intuitives.",
+    "education": "Je suis Mohammed Zouhair Ouaad, développeur web full-stack diplômé de l’ISTA NTIC Hay Riad à Rabat. À travers mes projets et missions freelance, je conçois des solutions performantes en mettant l’accent sur la clarté, la sécurité et l’expérience utilisateur.",
+    "philosophy": "Pour moi, chaque projet est une collaboration : écouter, comprendre et créer des solutions qui ont un réel impact. Je suis toujours à la recherche de nouveaux défis pour continuer à apprendre et à évoluer dans ce domaine passionnant."
+  },
+  "skills": "COMPÉTENCES",
+
+  "projects": [
+  {
+    "title": "Epic7ata Store",
+    "description": "Epic7ata est une boutique de vêtements basée sur la stack MERN destinée aux fans d'anime et de pop-culture au Maroc. Elle propose la navigation des produits, la personnalisation de design, le panier, le paiement et la gestion administrative, avec livraison dans toutes les villes marocaines."
+  },
+  {
+    "title": "Bankist Dashboard",
+    "description": "Bankist est un tableau de bord bancaire moderne construit avec HTML, CSS et JavaScript pur. Il comprend la connexion utilisateur, l'historique des transactions, les virements, les demandes de prêt et des mises à jour dynamiques de l'interface pour une expérience fluide."
+  },
+  {
+    "title": "Page d'accueil Bankist",
+    "description": "Une page d'accueil élégante et réactive pour une banque fictive, construite avec HTML, CSS et JavaScript. Elle propose un défilement fluide, des sections animées et des éléments interactifs pour mettre en valeur les services bancaires modernes."
+  },
+  {
+    "title": "Topico Store - Front-end",
+    "description": "Topico Store est un front-end moderne et réactif pour un site e-commerce technologique. Construit avec HTML, CSS et JavaScript, il comprend des listes de produits, des filtres, une interface de panier et une interface utilisateur soignée axée sur les gadgets."
+  },
+  {
+    "title": "Forkify - Front-end",
+    "description": "Forkify est une application web réactive pour trouver des recettes saines. Construite avec HTML, CSS et JavaScript, elle utilise une API pour rechercher des recettes par ingrédients ou mots-clés, affichant les résultats avec détails et images."
+  },
+  {
+    "title": "Portfolio Développeur",
+    "description": "Un site portfolio personnel créé avec HTML, CSS, JavaScript et Tailwind CSS. Il comprend un design réactif et un mode sombre pour présenter les projets et compétences avec un look moderne."
+  },
+  {
+    "title": "7titaaa shop",
+    "description": "7tita est une marque marocaine de streetwear inspirée par le skateboard, le hip-hop et la culture vintage. Fondée en 2023, la marque propose des pièces vintage de seconde main authentiques, alliant style urbain, caractère et originalité."
+  }
+],
+    "featured_work": "travaux en vedette",
+    "other_work": "autres travaux",
+
+    "contact": {
+      "letsConnect": "entrons en contact",
+      "headingLead": "PARLONS",
+      "headingAccent": "ENSEMBLE_",
+      "intro": "Un projet en tête ? Envoyez-moi un message et créons quelque chose ensemble.",
+      "newTransmission": "NOUVELLE TRANSMISSION",
+      "fullName": "NOM COMPLET",
+      "email": "EMAIL",
+      "projectType": "TYPE DE PROJET",
+      "selectService": "Choisissez un service",
+      "services": {
+        "website": "Site web / page d'accueil",
+        "webApp": "Application web",
+        "ecommerce": "E-commerce",
+        "collaboration": "Collaboration",
+        "other": "Autre"
+      },
+      "continue": "CONTINUER",
+      "back": "RETOUR",
+      "subject": "SUJET",
+      "message": "MESSAGE",
+      "sendMessage": "ENVOYER LE MESSAGE",
+      "communicationChannels": "CANAUX_DE_COMMUNICATION",
+      "developerStatus": "STATUT_DÉVELOPPEUR",
+      "statusAvailable": "Ouvert à de nouveaux projets",
+      "statusLocation": "Maroc / à distance",
+      "statusResponse": "Répond généralement en quelques heures",
+      "phone": "Téléphone",
+      "connectWithMe": "connectez moi",
+      "currentStatus": "état actuel",
+      "availableFreelance": "Prêt à donner vie à vos idées web",
+      "openFullTime": "Ouvert à des projets web innovants et impactants",
+      "responseTime": "Je vous répondrai dans quelques heures",
+      "placeholder": {
+        "name": "Entrez votre nom",
+        "email": "Entrez votre email",
+        "subject": "Quel est votre sujet",
+        "message": "Entrez votre message"
+      }
+    },
+
+  "footer": "Créé avec ❤️ par Zouhair Ouaad. Tous droits réservés."
+
+}

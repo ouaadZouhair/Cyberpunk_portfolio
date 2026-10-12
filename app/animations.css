@@ -1,0 +1,40 @@
+@keyframes glitch {
+  0% { clip-path: inset(0 0 90% 0); transform: translate(0); }
+  20% { clip-path: inset(10% 0 70% 0); transform: translate(-3px, 2px); }
+  40% { clip-path: inset(20% 0 60% 0); transform: translate(3px, -2px); }
+  60% { clip-path: inset(5% 0 85% 0); transform: translate(-2px, 1px); }
+  80% { clip-path: inset(15% 0 75% 0); transform: translate(2px, -1px); }
+  100% { clip-path: inset(0 0 90% 0); transform: translate(0); }
+}
+
+.animate-glitch {
+  animation: glitch 0.3s infinite steps(2, end);
+}
+
+.animate-glitch2 {
+  animation: glitch 0.3s infinite steps(3, end);
+  animation-delay: 0.05s;
+}
+
+.animate-glitch3 {
+  animation: glitch 0.3s infinite steps(4, end);
+  animation-delay: 0.1s;
+}
+
+@keyframes page-enter {
+  from { transform: translateX(var(--page-enter-offset)); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.page-enter-forward,
+.page-enter-backward {
+  animation: page-enter 0.28s ease-out both;
+}
+
+.page-enter-forward { --page-enter-offset: 30px; }
+.page-enter-backward { --page-enter-offset: -30px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter-forward,
+  .page-enter-backward { animation: none; }
+}

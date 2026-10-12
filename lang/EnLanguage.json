@@ -1,0 +1,120 @@
+
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "work": "Work",
+    "contact": "Contact",
+    "available": "Open to projects",
+    "availableShort": "Available",
+    "systemOnline": "System online",
+    "primary": "Primary navigation",
+    "mobile": "Mobile navigation",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu",
+    "switchLanguage": "Switch language to {{language}}",
+    "previous": "Previous section",
+    "next": "Next section",
+    "sectionNavigation": "Section navigation"
+  },
+  "hero": {
+    "hello": "Hello_World",
+    "title": "Web Developer",
+    "subtitle": {
+      "design": "Design",
+      "code": "Code",
+      "level": "Level Up"
+    },
+    "online": "Online",
+    "description": "I create modern, fast and functional websites to boost your business and put it online.",
+    "connect": "Connect",
+    "view_projects": "View Projects"
+  },
+  "about": {
+    "title": "my story",
+    "intro": "In 2020, I discovered web development out of curiosity… and that curiosity quickly turned into a true passion. Today, with over 2 years of experience, I enjoy transforming ideas into modern, fast, and intuitive digital experiences.",
+    "education": "I’m Mohammed Zouhair Ouaad, a full-stack web developer graduated from ISTA NTIC Hay Riad in Rabat. Through personal projects and freelance work, I build high-performance solutions with a strong focus on clarity, security, and user experience.",
+    "philosophy": "For me, every project is a collaboration: listening, understanding, and creating solutions that make a real impact. I am always seeking new challenges to continue learning and growing in this exciting field."
+  },
+  "skills" : "skills",
+  "projects": [
+  {
+    "title": "Epic7ata Store",
+    "description": "Epic7ata is a MERN stack clothing store for anime and pop-culture fans in Morocco. It features product browsing, design customization, cart, checkout, and admin management, with delivery across all Moroccan cities."
+  },
+  {
+    "title": "Bankist Dashboard",
+    "description": "Bankist is a modern banking dashboard built with HTML, CSS and vanilla JavaScript. It features user login, transaction history, transfers, loan requests, and dynamic UI updates for a smooth user experience."
+  },
+  {
+    "title": "Bankist Landing Page",
+    "description": "A sleek, responsive landing page for a fictional bank, built with HTML, CSS, and JavaScript. It features smooth scrolling, animated sections, and interactive elements to showcase modern banking services."
+  },
+  {
+    "title": "Topico Store - Front-end",
+    "description": "Topico Store is a modern, responsive front-end for a tech e-commerce website. Built with HTML, CSS, and JavaScript, it features product listings, filters, shopping cart UI, and a clean user interface focused on tech gadgets."
+  },
+  {
+    "title": "Forkify - Front-end",
+    "description": "Forkify is a responsive web app for finding healthy recipes. Built with HTML, CSS, and JavaScript, it uses an API to search recipes by ingredients or keywords, displaying results with cooking details and images."
+  },
+  {
+    "title": "Developer Portfolio",
+    "description": "A personal portfolio website built with HTML, CSS, JavaScript, and Tailwind CSS. It features responsive design, and a dark mode toggle to showcase projects and skills with a modern look."
+  },
+  {
+    "title": "7titaaa shop",
+    "description": "7tita is a Moroccan streetwear brand inspired by skateboarding, hip-hop, and vintage culture. Founded in 2023, the brand focuses on authentic second-hand vintage pieces that bring real street style, character, and individuality to modern fashion."
+  }
+  ],
+ 
+  "featured_work": "featured work",
+  "other_work": "other work",
+
+  "contact":{
+    "letsConnect": "let's connect",
+    "headingLead": "LET'S",
+    "headingAccent": "CONNECT_",
+    "intro": "Have a project in mind? Send a message and let's build something great.",
+    "newTransmission": "NEW TRANSMISSION",
+    "fullName": "FULL NAME",
+    "email": "EMAIL",
+    "projectType": "PROJECT TYPE",
+    "selectService": "Select a service",
+    "services": {
+      "website": "Website / landing page",
+      "webApp": "Web application",
+      "ecommerce": "E-commerce",
+      "collaboration": "Collaboration",
+      "other": "Other"
+    },
+    "continue": "CONTINUE",
+    "back": "BACK",
+    "subject": "SUBJECT",
+    "message": "MESSAGE",
+    "sendMessage": "SEND MESSAGE",
+    "communicationChannels": "COMMUNICATION_CHANNELS",
+    "developerStatus": "DEVELOPER_STATUS",
+    "statusAvailable": "Open to new projects",
+    "statusLocation": "Morocco / Remote",
+    "statusResponse": "Usually replies within a few hours",
+    "phone": "Phone",
+    "connectWithMe": "connect me",
+    "currentStatus": "current status",
+    "availableFreelance": "Ready to Bring Your Web Ideas to Life",
+    "openFullTime": "Open to Innovative and Impactful Web Projects",
+    "responseTime": "I’ll Get Back to You in a few hours",
+    "placeholder": {
+      "name": "Enter your name",
+      "email": "Enter your email",
+      "subject": "What's your subject",
+      "message": "Enter your message"
+    }
+  },
+
+  "footer": "Created with ❤️ by Zouhair Ouaad. All rights reserved."
+
+
+  
+}
