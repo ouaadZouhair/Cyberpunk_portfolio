@@ -1,9 +1,9 @@
 .header {
   position: fixed;
   z-index: 50;
-  top: 12px;
-  right: 16px;
-  left: 16px;
+  top: calc(12px + env(safe-area-inset-top, 0px));
+  right: max(12px, env(safe-area-inset-right, 0px));
+  left: max(12px, env(safe-area-inset-left, 0px));
   pointer-events: none;
   font-family: var(--font-tech-local), monospace;
 }
@@ -28,24 +28,25 @@
 .brand {
   display: inline-flex;
   min-width: 0;
+  min-height: 44px;
   flex: none;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   color: #f2f8fb;
   text-decoration: none;
 }
 
 .brandMark {
   display: flex;
-  width: 35px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   flex: none;
   align-items: center;
   justify-content: center;
   border: 1px solid #00dcea;
   border-radius: 2px;
   color: #00e9f4;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 700;
   line-height: 1;
   transition: box-shadow 0.2s, background 0.2s;
@@ -53,9 +54,7 @@
 
 .brandMark span { display: inline; }
 .brand:hover .brandMark { background: rgba(0, 220, 234, 0.09); box-shadow: 0 0 13px rgba(0, 220, 234, 0.2); }
-.brandText { display: flex; min-width: 0; flex-direction: column; gap: 2px; }
-.brandName { overflow: hidden; font-size: 13px; font-weight: 700; line-height: 1.2; white-space: nowrap; }
-.brandSubtitle { color: #00e9f4; font-size: 9px; font-weight: 600; line-height: 1.2; white-space: nowrap; }
+.brandName { font-size: clamp(18px, 1.8vw, 24px); font-weight: 700; line-height: 1.2; letter-spacing: 0.025em; white-space: nowrap; }
 .topActions { display: flex; flex: none; align-items: center; gap: 8px; }
 
 .navLinks {
@@ -74,18 +73,20 @@
   display: flex;
   min-width: 0;
   height: 48px;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 2px;
+  gap: 10px;
+  padding-inline: 10px;
   border-bottom: 2px solid rgba(96, 117, 131, 0.36);
   color: #e1e9ef;
   background: rgba(25, 34, 45, 0.9);
-  font-size: 10px;
+  font-size: clamp(16px, 1.35vw, 18px);
   font-weight: 700;
   line-height: 1.2;
   text-align: center;
   text-decoration: none;
+  white-space: nowrap;
   transition: color 0.2s, background 0.2s, border-color 0.2s;
 }
 
@@ -106,13 +107,15 @@
 .navLink[data-active="true"] { color: #00ecf3; background: rgba(27, 54, 60, 0.92); text-shadow: 0 0 11px rgba(0, 235, 242, 0.25); }
 .navLink:hover::after, .navLink[data-active="true"]::after { transform: scaleX(1); }
 .navLink:hover .linkLabel { animation: label-glitch 0.27s steps(2, end) 1; }
-.linkNumber { color: #7f8e9c; font-size: 10px; font-weight: 400; }
+.linkNumber { color: #7f8e9c; font-size: 14px; font-weight: 400; }
 .navLink[data-active="true"] .linkNumber { color: #00ecf3; }
+
+.mobileLink { position: relative; }
 
 .menuToggle {
   display: none;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   flex: none;
   place-items: center;
   border: 1px solid rgba(0, 231, 241, 0.45);
@@ -129,11 +132,12 @@
 
 .mobileOverlay {
   position: fixed;
-  top: 92px;
-  right: 16px;
-  bottom: 12px;
-  left: 16px;
+  top: calc(96px + env(safe-area-inset-top, 0px));
+  right: max(12px, env(safe-area-inset-right, 0px));
+  bottom: max(12px, env(safe-area-inset-bottom, 0px));
+  left: max(12px, env(safe-area-inset-left, 0px));
   overflow-y: auto;
+  overscroll-behavior: contain;
   border: 1px solid rgba(0, 231, 241, 0.24);
   border-radius: 8px;
   background: radial-gradient(circle at 80% 15%, rgba(255, 0, 255, 0.08), transparent 38%), radial-gradient(circle at 15% 75%, rgba(0, 255, 231, 0.08), transparent 42%), rgba(9, 16, 24, 0.97);
@@ -148,7 +152,7 @@
 
 .mobileOverlay[data-open="true"] { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); transition: opacity 0.22s ease-out, transform 0.22s ease-out, visibility 0s; }
 .mobileLink { display: flex; min-height: 68px; align-items: center; gap: 15px; padding: 16px 18px; border-bottom: 1px solid rgba(0, 255, 231, 0.15); color: #dcebf0; font-size: clamp(21px, 5vw, 29px); font-weight: 600; letter-spacing: 0.035em; text-decoration: none; transition: color 0.2s, background 0.2s, padding-left 0.2s; }
-.mobileNumber { color: #8295a2; font-size: 12px; font-weight: 400; }
+.mobileNumber { color: #8295a2; font-size: 16px; font-weight: 400; }
 .mobileLink:hover { padding-left: 24px; color: #9afaff; background: rgba(0, 255, 231, 0.06); }
 .mobileLink[data-active="true"] { border-left: 2px solid #00ffe7; color: #76faff; background: rgba(0, 255, 231, 0.075); text-shadow: 0 0 16px rgba(0, 255, 231, 0.2); }
 .mobileLink[data-active="true"] .mobileNumber { color: #00ecf3; }
@@ -159,22 +163,20 @@
   82% { text-shadow: 1px 0 #00ffe7, -1px 0 #ff00ff; transform: translateX(1px); }
 }
 
-@media (min-width: 701px) { .mobileOverlay { display: none; } }
+@media (min-width: 1024px) { .mobileOverlay { display: none; } }
 
-@media (max-width: 700px) {
-  .hud { justify-content: space-between; gap: 8px; padding: 12px; }
+@media (max-width: 1023px) {
+  .hud { justify-content: space-between; gap: 8px; padding: 8px 10px; }
   .navLinks { display: none; }
   .menuToggle { display: grid; }
 }
 
-@media (max-width: 350px) {
-  .brandName { font-size: 11px; }
-  .brandSubtitle { font-size: 8px; }
+@media (max-width: 380px) {
+  .brandName { font-size: 16px; }
+  .brandMark { width: 32px; height: 34px; font-size: 17px; }
   .brand { gap: 7px; }
-  .topActions { gap: 5px; }
+  .topActions { gap: 4px; }
 }
-
-@media (max-height: 470px) and (max-width: 700px) { .mobileOverlay { top: 88px; } }
 
 @media (prefers-reduced-motion: reduce) {
   .brandMark, .navLink, .navLink::after, .menuToggle, .mobileOverlay, .mobileLink { transition: none; }

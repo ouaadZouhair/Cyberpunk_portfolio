@@ -22,19 +22,34 @@
 }
 
 @keyframes page-enter {
-  from { transform: translateX(var(--page-enter-offset)); opacity: 0; }
+  from { transform: translateY(6px); opacity: 0.88; }
   to { transform: translateX(0); opacity: 1; }
 }
 
-.page-enter-forward,
-.page-enter-backward {
-  animation: page-enter 0.28s ease-out both;
+.portfolio-main > .page-container:not([data-loading]) {
+  animation: page-enter 0.16s ease-out both;
 }
 
-.page-enter-forward { --page-enter-offset: 30px; }
-.page-enter-backward { --page-enter-offset: -30px; }
+.link-pending {
+  position: fixed;
+  z-index: 70;
+  top: env(safe-area-inset-top, 0px);
+  right: 0;
+  left: 0;
+  height: 3px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+  background-size: 200% 100%;
+  opacity: 0;
+  animation: navigation-pending 0.9s linear 0.15s infinite;
+}
+
+@keyframes navigation-pending {
+  from { background-position: 200% 0; opacity: 1; }
+  to { background-position: -200% 0; opacity: 1; }
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .page-enter-forward,
-  .page-enter-backward { animation: none; }
+  .portfolio-main > .page-container { animation: none; }
+  .link-pending { animation: none; opacity: 1; background: var(--color-primary); }
 }

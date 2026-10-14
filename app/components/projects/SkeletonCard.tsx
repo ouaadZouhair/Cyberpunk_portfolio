@@ -6,7 +6,7 @@ const SkeletonCard = ({ featured = true }: { featured?: boolean }) => {
     <div
       className={`relative bg-black/30 backdrop-blur-lg border-4 overflow-hidden ${borderClass}`}
     >
-      <div className="relative w-full h-[180px] md:h-[260px] overflow-hidden bg-white/5">
+      <div className="relative w-full aspect-video overflow-hidden bg-white/5">
         <div
           className={`absolute inset-0 -translate-x-full animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent ${shimmerClass} to-transparent`}
         />

@@ -1,5 +1,6 @@
 {
     "navigation": {
+    "loading": "Chargement de la page...",
     "home": "Accueil",
     "about": "À Propos",
     "projects": "Projets",
@@ -23,12 +24,12 @@
     "subtitle": {
       "design": "Design",
       "code": "Code",
-      "level": "Evoluer"
+      "deploy": "Déploiement"
     },
     "online": "En ligne",
-    "description": "Je crée des sites modernes, rapides et fonctionnels pour booster votre business et le mettre en ligne.",
-    "connect": "Me Contacter",
-    "view_projects": "Voir les Projets"
+    "description": "Je développe des sites et des applications web performants qui aident les entreprises à attirer des clients, à renforcer leur crédibilité et à se développer en ligne.",
+    "connect": "Lancer un projet",
+    "view_projects": "Explorer les projets"
   },
   "about": {
     "title": "mon parcours",

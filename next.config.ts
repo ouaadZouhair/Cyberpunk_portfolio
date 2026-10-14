@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   // Keep file tracing scoped to this Next.js project when the parent
   // workspace contains another package-lock.json.
   outputFileTracingRoot: process.cwd(),
+  turbopack: { root: process.cwd() },
   experimental: { cpus: 1 },
 };
 export default nextConfig;

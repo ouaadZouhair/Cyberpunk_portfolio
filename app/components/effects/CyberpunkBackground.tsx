@@ -10,23 +10,34 @@ export default function CyberpunkBackground() {
 
   useEffect(() => {
     if (!rainRef.current || !scanRef.current || !scanRef2.current || !scanRef3.current) return;
-    const W = window.innerWidth;
-    const H = window.innerHeight;
-    rainRef.current.width  = W; rainRef.current.height  = H;
-    scanRef.current.width  = W; scanRef.current.height  = H;
-    scanRef2.current.width = W; scanRef2.current.height = H;
-    scanRef3.current.width = W; scanRef3.current.height = H;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const canvases = [rainRef.current, scanRef.current, scanRef2.current, scanRef3.current];
+    let W = window.innerWidth;
+    let H = window.innerHeight;
+    let drops: number[] = [];
+    let resizeFrame = 0;
+
+    const resizeCanvases = () => {
+      W = window.innerWidth;
+      H = window.innerHeight;
+      canvases.forEach((canvas) => {
+        canvas.width = W;
+        canvas.height = H;
+      });
+      drops = Array.from({ length: Math.floor(W / 18) }, () => (Math.random() * -60) | 0);
+    };
+    const onResize = () => {
+      window.cancelAnimationFrame(resizeFrame);
+      resizeFrame = window.requestAnimationFrame(resizeCanvases);
+    };
+    resizeCanvases();
 
     /* ── MATRIX RAIN ── */
     const rCtx = rainRef.current.getContext("2d");
     if (!rCtx) return;
     const chars = "QWERTYUIOPASDFGHJKLXCVBNM;&#@!?/><.12345657890";
-    const cols = Math.floor(W / 18);
-    const drops = Array.from({ length: cols }, () => (Math.random() * -60) | 0);
-    let tick = 0;
     const rainId = setInterval(() => {
-      tick++;
-      if (tick % 3 !== 0) return;
       rCtx.fillStyle = "rgba(5,5,16,0.15)";
       rCtx.fillRect(0, 0, W, H);
       drops.forEach((d, i) => {
@@ -37,7 +48,7 @@ export default function CyberpunkBackground() {
         if (d * 18 > H && Math.random() > 0.975) drops[i] = 0;
         drops[i]++;
       });
-    }, 16);
+    }, 48);
 
     /* shared scanline drawer */
     function makeScan(ref: RefObject<HTMLCanvasElement | null>, startY: number, speed: number, lineWidth: number) {
@@ -86,7 +97,10 @@ export default function CyberpunkBackground() {
     /* ── SCANLINE 3 — fast ── */
     const scanId3 = makeScan(scanRef3, H * 0.66, 4.2, 1);
 
+    window.addEventListener("resize", onResize, { passive: true });
     return () => {
+      window.removeEventListener("resize", onResize);
+      window.cancelAnimationFrame(resizeFrame);
       clearInterval(rainId);
       clearInterval(scanId);
       if (scanId2) clearInterval(scanId2);

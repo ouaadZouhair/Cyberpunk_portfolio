@@ -1,6 +1,7 @@
 
 {
   "navigation": {
+    "loading": "Loading page...",
     "home": "Home",
     "about": "About",
     "projects": "Projects",
@@ -24,12 +25,12 @@
     "subtitle": {
       "design": "Design",
       "code": "Code",
-      "level": "Level Up"
+      "deploy": "Deploy"
     },
     "online": "Online",
-    "description": "I create modern, fast and functional websites to boost your business and put it online.",
-    "connect": "Connect",
-    "view_projects": "View Projects"
+    "description": "I build high-performance websites and web applications that help businesses attract customers, establish credibility, and grow online.",
+    "connect": "Start a project",
+    "view_projects": "Explore work"
   },
   "about": {
     "title": "my story",

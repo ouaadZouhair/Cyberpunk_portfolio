@@ -1,7 +1,7 @@
 .backdrop {
   position: fixed;
   inset: 0;
-  z-index: 50;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,6 +16,7 @@
   width: min(100%, 680px);
   max-height: calc(100dvh - 32px);
   overflow-y: auto;
+  overscroll-behavior: contain;
   border: 1px solid rgba(64, 210, 235, 0.43);
   border-radius: 7px;
   color: #edf7fb;
@@ -50,12 +51,16 @@
 }
 
 .header {
-  min-height: 40px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  min-height: 56px;
   justify-content: space-between;
   gap: 12px;
   padding: 0 12px;
   border-bottom: 1px solid rgba(96, 216, 235, 0.18);
-  background: rgba(10, 21, 31, 0.58);
+  background: rgba(10, 21, 31, 0.96);
+  backdrop-filter: blur(12px);
   font: 11px var(--font-tech-local), monospace;
   letter-spacing: 0.04em;
 }
@@ -77,7 +82,7 @@
   transition: color 0.2s, border-color 0.2s, background 0.2s;
 }
 
-.closeButton { width: 24px; height: 24px; cursor: pointer; font-size: 15px; }
+.closeButton { width: 44px; height: 44px; cursor: pointer; font-size: 20px; }
 .closeButton:hover,
 .launchButton:hover { color: #9cf9ff; border-color: rgba(79, 219, 239, 0.55); background: rgba(0, 255, 231, 0.08); }
 .closeButton:focus-visible,
@@ -104,6 +109,7 @@
   left: 0;
   z-index: 1;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 12px;
   min-height: 27px;
   padding: 5px 9px;
@@ -122,7 +128,7 @@
 .titleRow { justify-content: space-between; gap: 12px; align-items: flex-end; }
 .eyebrow { margin: 0 0 4px; color: #61d9e8; font: 10px var(--font-tech-local), monospace; letter-spacing: 0.08em; }
 .title { margin: 0; overflow-wrap: anywhere; color: #f2f9fc; font: 700 clamp(22px, 3.5vw, 29px) / 1.15 var(--font-tech-local), monospace; letter-spacing: -0.035em; }
-.launchButton { width: 31px; height: 31px; border-color: rgba(73, 202, 227, 0.38); border-radius: 2px; font-size: 12px; }
+.launchButton { width: 44px; height: 44px; border-color: rgba(73, 202, 227, 0.38); border-radius: 2px; font-size: 16px; }
 
 .detailsPanel {
   margin-top: 13px;
@@ -132,12 +138,12 @@
   backdrop-filter: blur(10px);
 }
 
-.description { margin: 0; color: #c4d5de; font: 14px / 1.55 var(--font-tech-local), monospace; }
+.description { margin: 0; overflow-wrap: anywhere; color: #c4d5de; font: 15px / 1.6 var(--font-tech-local), monospace; }
 .technologies { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
-.technology { padding: 4px 7px; color: #8beaf4; border: 1px solid rgba(82, 217, 236, 0.33); background: rgba(0, 215, 234, 0.08); font: 10px var(--font-tech-local), monospace; letter-spacing: 0.02em; text-transform: uppercase; }
+.technology { max-width: 100%; overflow-wrap: anywhere; padding: 4px 7px; color: #8beaf4; border: 1px solid rgba(82, 217, 236, 0.33); background: rgba(0, 215, 234, 0.08); font: 12px var(--font-tech-local), monospace; letter-spacing: 0.02em; text-transform: uppercase; }
 
 .actions { gap: 8px; margin-top: 14px; }
-.action { display: flex; flex: 1; align-items: center; justify-content: center; gap: 9px; min-height: 39px; padding: 8px 12px; font: 700 12px var(--font-tech-local), monospace; text-decoration: none; white-space: nowrap; transition: background 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.2s; }
+.action { display: flex; flex: 1; align-items: center; justify-content: center; gap: 9px; min-height: 44px; padding: 8px 12px; font: 700 12px var(--font-tech-local), monospace; text-decoration: none; white-space: nowrap; transition: background 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.2s; }
 .action:hover { transform: translateY(-1px); }
 .action svg { font-size: 12px; }
 .primaryAction { color: #06131a; border: 1px solid #4ce7f0; background: #36d9e9; box-shadow: 0 0 18px rgba(41, 221, 238, 0.12); }
@@ -145,7 +151,7 @@
 .secondaryAction { color: #e4f3f8; border: 1px solid rgba(83, 213, 233, 0.42); background: rgba(14, 27, 40, 0.72); }
 .secondaryAction:hover { border-color: #61d9e8; background: rgba(27, 55, 70, 0.78); }
 
-.footer { justify-content: space-between; gap: 8px; margin-top: 13px; padding-top: 8px; border-top: 1px solid rgba(91, 205, 226, 0.14); color: #7895a4; font: 10px var(--font-tech-local), monospace; letter-spacing: 0.03em; }
+.footer { justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-top: 13px; padding-top: 8px; border-top: 1px solid rgba(91, 205, 226, 0.14); color: #7895a4; font: 10px var(--font-tech-local), monospace; letter-spacing: 0.03em; }
 
 @media (max-width: 480px) {
   .backdrop { padding: 10px; }
@@ -157,6 +163,10 @@
   .content { padding: 12px; }
   .imageCaption { font-size: 9px; }
   .footer { font-size: 9px; }
+}
+
+@media (max-width: 380px) {
+  .actions { flex-direction: column; align-items: stretch; }
 }
 
 @media (prefers-reduced-motion: reduce) {

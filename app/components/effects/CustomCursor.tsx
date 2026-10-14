@@ -6,12 +6,14 @@ function CustomCursor() {
   const [cursorSrc, setCursorSrc] = useState("/webElements/arrow.cur");
 
   useEffect(() => {
+    const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
     const moveCursor = (e: MouseEvent) => {
       if (!cursorRef.current) return;
 
       // Move cursor
       cursorRef.current.style.left = e.clientX + "px";
       cursorRef.current.style.top = e.clientY + "px";
+      cursorRef.current.style.opacity = "1";
 
       // Get element under cursor
       const target = document.elementFromPoint(e.clientX, e.clientY);
@@ -41,8 +43,23 @@ function CustomCursor() {
       setCursorSrc(newCursor);
     };
 
-    window.addEventListener("mousemove", moveCursor);
-    return () => window.removeEventListener("mousemove", moveCursor);
+    const hideCursor = () => {
+      if (cursorRef.current) cursorRef.current.style.opacity = "0";
+    };
+    const updatePointer = () => {
+      hideCursor();
+      window.removeEventListener("mousemove", moveCursor);
+      if (finePointer.matches) window.addEventListener("mousemove", moveCursor);
+    };
+
+    updatePointer();
+    finePointer.addEventListener("change", updatePointer);
+    document.addEventListener("mouseleave", hideCursor);
+    return () => {
+      window.removeEventListener("mousemove", moveCursor);
+      finePointer.removeEventListener("change", updatePointer);
+      document.removeEventListener("mouseleave", hideCursor);
+    };
   }, []);
 
   // Determine transform based on file name
@@ -53,10 +70,12 @@ function CustomCursor() {
     <img
       ref={cursorRef}
       src={cursorSrc}
-      alt="cursor"
-      className="opacity-0 lg:opacity-100"
+      alt=""
+      aria-hidden="true"
+      className="custom-cursor"
       style={{
         position: "fixed",
+        opacity: 0,
         pointerEvents: "none",
         width: sizeCursor,
         height: sizeCursor,

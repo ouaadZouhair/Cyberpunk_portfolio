@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import { FiMenu, FiX } from "react-icons/fi";
 import LanguageSwitcher from "./LanguageSwitcher";
+import LinkStatus from "../shared/LinkStatus";
 import { NAV_ITEMS } from "./navigation";
 import styles from "./Navbar.module.css";
 
@@ -19,7 +20,7 @@ export default function Navbar() {
   useEffect(() => setMenuOpen(false), [pathname]);
 
   useEffect(() => {
-    const desktop = window.matchMedia("(min-width: 701px)");
+    const desktop = window.matchMedia("(min-width: 1024px)");
     const closeOnDesktop = () => {
       if (desktop.matches) setMenuOpen(false);
     };
@@ -56,12 +57,10 @@ export default function Navbar() {
   return (
     <header className={styles.header}>
       <div className={styles.hud}>
-        <Link href="/" onClick={() => setMenuOpen(false)} className={styles.brand} aria-label={`Zouhair Ouaad — ${t("navigation.home")}`}>
+        <Link href="/" prefetch={true} onNavigate={() => setMenuOpen(false)} className={styles.brand} aria-label={`Zouhair Ouaad — ${t("navigation.home")}`}>
           <span className={styles.brandMark} aria-hidden="true">Z<span>_</span></span>
-          <span className={styles.brandText}>
-            <span className={styles.brandName}>ZOUHAIR.DEV</span>
-            <span className={styles.brandSubtitle}>{t("navigation.systemOnline").toUpperCase()}</span>
-          </span>
+          <span className={styles.brandName}>ZOUHAIR.MA</span>
+          <LinkStatus />
         </Link>
 
         <nav aria-label={t("navigation.primary")} className={styles.navLinks}>
@@ -69,12 +68,14 @@ export default function Navbar() {
             <Link
               key={item.href}
               href={item.href}
+              prefetch={true}
               aria-current={pathname === item.href ? "page" : undefined}
               data-active={pathname === item.href}
               className={styles.navLink}
             >
               <span className={styles.linkNumber} aria-hidden="true">{item.number}</span>
               <span className={styles.linkLabel}>{t(item.labelKey).toUpperCase()}</span>
+              <LinkStatus />
             </Link>
           ))}
         </nav>
@@ -109,13 +110,15 @@ export default function Navbar() {
                   key={item.href}
                   ref={index === 0 ? firstMobileLinkRef : undefined}
                   href={item.href}
-                  onClick={() => setMenuOpen(false)}
+                  prefetch={true}
+                  onNavigate={() => setMenuOpen(false)}
                   aria-current={active ? "page" : undefined}
                   data-active={active}
                   className={styles.mobileLink}
                 >
                   <span className={styles.mobileNumber} aria-hidden="true">{item.number}</span>
                   <span>{t(item.labelKey).toUpperCase()}</span>
+                  <LinkStatus />
                 </Link>
               );
             })}

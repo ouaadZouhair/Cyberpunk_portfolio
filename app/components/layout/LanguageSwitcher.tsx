@@ -19,7 +19,7 @@ export default function LanguageSwitcher() {
       onClick={toggleLanguage}
       aria-label={t("navigation.switchLanguage", { language: nextLanguage.toUpperCase() })}
       title={t("navigation.switchLanguage", { language: nextLanguage.toUpperCase() })}
-      className="inline-flex h-9 shrink-0 items-center gap-1.5 border border-highlight/35 bg-highlight/5 px-2.5 font-tech text-[10px] font-semibold tracking-[0.05em] text-highlight transition-colors hover:border-highlight hover:bg-highlight/10 hover:text-yellow-200 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+      className="inline-flex h-11 shrink-0 items-center gap-1 border border-highlight/35 bg-highlight/5 px-2 sm:gap-1.5 sm:px-2.5 font-tech text-xs font-semibold tracking-[0.05em] text-highlight transition-colors hover:border-highlight hover:bg-highlight/10 hover:text-yellow-200 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
     >
       <span aria-hidden="true">[</span>
       <span className={currentLanguage === "fr" ? "text-highlight" : "text-highlight/65"}>FR</span>

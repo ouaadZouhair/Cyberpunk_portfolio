@@ -1,0 +1,91 @@
+.hero {
+  display: grid;
+  min-height: calc(100svh - var(--navbar-clearance));
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(24px, 4vw, 64px);
+  padding-top: clamp(8px, 2vw, 32px);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.copy { min-width: 0; }
+.intro { padding: 16px; }
+
+.title {
+  margin: 0;
+  color: #edf1f8;
+  font-size: clamp(36px, 5.2vw, 64px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.tagline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: clamp(16px, 1.4vw, 18px);
+  font-weight: 700;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.description {
+  margin-top: 10px;
+  color: #aeb9ca;
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.65;
+}
+
+.actions { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; margin-top: 20px; padding: 12px; }
+.button {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid #00dcea;
+  border-radius: 1px;
+  font: 700 clamp(12px, 1.05vw, 14px) / 1.4 Arial, Helvetica, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.button svg { width: 15px; height: 15px; flex: none; }
+.primaryButton { color: #051017; background: #00dcea; font-weight: 500; }
+.secondaryButton { color: #e6f3f7; background: transparent; }
+.secondaryButton svg { color: #00dcea; }
+.button:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 4px; }
+.avatar { display: block; width: min(100%, 400px); height: auto; max-height: 440px; object-fit: contain; margin-inline: auto; }
+
+@media (min-width: 480px) {
+  .actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 640px) {
+  .avatar { width: min(100%, 440px); max-height: 500px; }
+}
+
+@media (min-width: 1024px) {
+  .hero { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); }
+  .avatar { width: 100%; max-height: min(70svh, 680px); }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button:hover { transform: translateY(-2px); }
+  .primaryButton:hover { background: #33e6f1; box-shadow: 0 0 22px rgba(0, 220, 234, 0.2); }
+  .secondaryButton:hover { background: rgba(0, 220, 234, 0.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button { transition: none; }
+}

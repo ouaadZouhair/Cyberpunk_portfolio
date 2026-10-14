@@ -49,7 +49,7 @@ export default function Contact() {
   ];
 
   return (
-    <section className={styles.page}>
+    <section className={`page-container page-section ${styles.page}`}>
       <div className={styles.container}>
         <header className={styles.intro}>
           <h1 className={styles.title}>

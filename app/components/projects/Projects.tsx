@@ -77,16 +77,11 @@ const Projects = () => {
   ];
 
   return (
-    <section className="page min-h-screen text-gray-200 font-tech p-3 pt-9 md:p-9">
-
-      <div className="max-w-6xl mx-auto pt-14">
-        {/* <h2 className="text-3xl font-cyber text-highlight mb-8 text-center">{t('featured_work')}</h2> */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-6">
-          {projects.filter(project => project.featured)
-                .map((project, index) => (
-            <Card project={project} index={index} key={index} />
-          ))}
-        </div>
+    <section className="page-container page-section text-gray-200 font-tech">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+        {projects.filter(project => project.featured).map((project, index) => (
+          <Card project={project} index={index} key={index} />
+        ))}
       </div>
     </section>
   );
