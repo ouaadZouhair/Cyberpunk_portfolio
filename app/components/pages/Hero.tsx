@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { FiArrowUpRight, FiZap } from "react-icons/fi";
 import { oxanium } from "../../hero-font";
@@ -8,12 +9,13 @@ import styles from "./Hero.module.css";
 
 export default function Hero() {
   const { t } = useTranslation();
+  const title = t("hero.title");
 
   return (
     <section className={`page-container page-section ${styles.hero}`}>
       <div className={styles.copy}>
         <div className={styles.intro}>
-          <h1 className={`${oxanium.className} ${styles.title}`}>{t("hero.title")}</h1>
+          <h1 className={`${oxanium.className} ${styles.title}`} data-text={title}>{title}</h1>
           <p className={styles.tagline}>
             <span className="text-primary">{t("hero.subtitle.design")}.</span>
             <span className="text-secondary">{t("hero.subtitle.code")}.</span>
@@ -39,16 +41,13 @@ export default function Hero() {
         </div>
       </div>
 
-      <img
-        src="/zouhairRobot-640.webp"
-        srcSet="/zouhairRobot-384.webp 384w, /zouhairRobot-640.webp 640w, /zouhairRobot-849.webp 849w"
-        sizes="(min-width: 1280px) 520px, (min-width: 1024px) 42vw, (min-width: 640px) 440px, (min-width: 432px) 400px, 94vw"
-        alt="Glitched Avatar"
-        width={849}
-        height={959}
-        loading="eager"
-        fetchPriority="high"
-        decoding="async"
+      <Image
+        src="/Avatar.webp"
+        sizes="(min-width: 1280px) 464px, (min-width: 1024px) 42vw, (min-width: 640px) 404px, (min-width: 386px) 354px, calc(100vw - 32px)"
+        alt="Zouhair, full-stack developer"
+        width={1122}
+        height={1402}
+        priority
         className={styles.avatar}
       />
     </section>

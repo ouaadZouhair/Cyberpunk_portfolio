@@ -54,7 +54,7 @@
 
 .brandMark span { display: inline; }
 .brand:hover .brandMark { background: rgba(0, 220, 234, 0.09); box-shadow: 0 0 13px rgba(0, 220, 234, 0.2); }
-.brandName { font-size: clamp(18px, 1.8vw, 24px); font-weight: 700; line-height: 1.2; letter-spacing: 0.025em; white-space: nowrap; }
+.brandName { font-size: clamp(16px, 1.5vw, 20px); font-weight: 700; line-height: 1.2; letter-spacing: 0.025em; white-space: nowrap; }
 .topActions { display: flex; flex: none; align-items: center; gap: 8px; }
 
 .navLinks {
@@ -107,7 +107,13 @@
 .navLink[data-active="true"] { color: #00ecf3; background: rgba(27, 54, 60, 0.92); text-shadow: 0 0 11px rgba(0, 235, 242, 0.25); }
 .navLink:hover::after, .navLink[data-active="true"]::after { transform: scaleX(1); }
 .navLink:hover .linkLabel { animation: label-glitch 0.27s steps(2, end) 1; }
-.linkNumber { color: #7f8e9c; font-size: 14px; font-weight: 400; }
+.linkNumber {
+  color: #7f8e9c;
+  font-size: clamp(19px, 1.6vw, 22px);
+  font-weight: 700;
+  line-height: 1;
+}
+.linkLabel { font-size: clamp(14px, 1.2vw, 17px); }
 .navLink[data-active="true"] .linkNumber { color: #00ecf3; }
 
 .mobileLink { position: relative; }
