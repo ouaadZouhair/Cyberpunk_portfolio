@@ -6,8 +6,9 @@ import "./globals.css";
 import "./animations.css";
 
 export const metadata: Metadata = {
-  title: { default: "Zouhair — Cyberpunk Portfolio", template: "%s | Zouhair" },
-  description: "Mohammed Zouhair Ouaad's developer portfolio",
+  title: { default: "Zouhair.ma", template: "%s | Zouhair.ma" },
+  description: "Portfolio of Mohammed Zouhair Ouaad, a full-stack web developer building modern digital experiences.",
+  applicationName: "Zouhair.ma",
 };
 
 export const viewport: Viewport = {

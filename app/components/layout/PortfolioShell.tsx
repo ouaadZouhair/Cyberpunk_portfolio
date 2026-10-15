@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import CyberpunkBackground from "../effects/CyberpunkBackground";
 import CustomCursor from "../effects/CustomCursor";
+import DynamicDocumentTitle from "./DynamicDocumentTitle";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import { NAV_ITEMS } from "./navigation";
@@ -40,6 +41,7 @@ export default function PortfolioShell({ children }: { children: React.ReactNode
 
   return (
     <div className="min-h-svh bg-black/95 text-gray font-cyber relative overflow-x-clip">
+      <DynamicDocumentTitle />
       <CyberpunkBackground />
       <div className="fixed inset-0 opacity-40 z-0 pointer-events-none cyber-grid" />
       <div className="fixed z-0 w-80 h-80 rounded-full blur-[100px] bg-secondary/40 animate-pulse duration-1000 pointer-events-none" style={{ top: "130px", right: "10%" }} />
