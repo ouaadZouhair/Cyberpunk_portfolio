@@ -45,7 +45,7 @@ export default function Contact() {
   const mainChannels = [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/ouaadzouhair", icon: <FaLinkedin aria-hidden="true" /> },
     { label: "GitHub", href: "https://github.com/ouaadzouhair", icon: <FaGithub aria-hidden="true" /> },
-    { label: "Email", href: "mailto:ouaadzouhair11@gmail.com", icon: <FaEnvelope aria-hidden="true" /> },
+    { label: "Instagram", href: "https://www.instagram.com/zouhair_od.ma/", icon: <FaInstagram aria-hidden="true" /> },
   ];
 
   return (
@@ -181,12 +181,12 @@ export default function Contact() {
                 ))}
               </div>
               <div className={styles.extraChannels}>
-                <a href="https://instagram.com/zouhairouaad1" target="_blank" rel="noopener noreferrer">
-                  <FaInstagram aria-hidden="true" /> Instagram
-                </a>
-                <a href="tel:+212763835972">
-                  <FaPhone aria-hidden="true" /> {t("contact.phone")}
-                </a>
+                <span>
+                  <FaEnvelope aria-hidden="true" /> ouaadzouhair11@gmail.com
+                </span>
+                <span>
+                  <FaPhone aria-hidden="true" /> +212 763 835 972
+                </span>
               </div>
             </section>
 
