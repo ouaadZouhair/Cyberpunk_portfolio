@@ -43,7 +43,7 @@ export default function Hero() {
 
       <Image
         src="/Avatar.webp"
-        sizes="(min-width: 1280px) 464px, (min-width: 1024px) 42vw, (min-width: 640px) 404px, (min-width: 386px) 354px, calc(100vw - 32px)"
+        sizes="(min-width: 1440px) 560px, (min-width: 1280px) 464px, (min-width: 1024px) 42vw, (min-width: 640px) 404px, (min-width: 386px) 354px, calc(100vw - 32px)"
         alt="Zouhair, full-stack developer"
         width={1122}
         height={1402}

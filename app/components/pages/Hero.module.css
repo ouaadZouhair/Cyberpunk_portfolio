@@ -135,6 +135,17 @@
   }
 }
 
+@media (min-width: 1440px) {
+  .hero {
+    width: min(calc(100% - 2 * var(--page-gutter)), 1200px);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .avatar {
+    max-width: min(100%, 560px);
+  }
+}
+
 @media (hover: hover) and (pointer: fine) {
   .button:hover { transform: translateY(-2px); }
   .primaryButton:hover { background: #33e6f1; box-shadow: 0 0 22px rgba(0, 220, 234, 0.2); }
