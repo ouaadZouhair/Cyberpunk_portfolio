@@ -2,7 +2,7 @@
 
 import { useState, type ChangeEvent, type FormEvent, type MouseEvent } from "react";
 import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin, FaPhone } from "react-icons/fa";
-import { FiArrowLeft, FiArrowRight, FiChevronDown, FiClock, FiMapPin } from "react-icons/fi";
+import { FiArrowLeft, FiArrowRight, FiCheck, FiChevronDown, FiClock, FiCopy, FiMapPin } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
 import styles from "./Contact.module.css";
 
@@ -26,6 +26,17 @@ export default function Contact() {
   const { t } = useTranslation();
   const [step, setStep] = useState<1 | 2>(1);
   const [formData, setFormData] = useState<ContactForm>(initialForm);
+  const [copiedChannel, setCopiedChannel] = useState<string | null>(null);
+
+  const copyChannel = async (channel: "email" | "phone", value: string) => {
+    setCopiedChannel(channel);
+    try {
+      await navigator.clipboard.writeText(value);
+    } catch {
+      // Keep the visual confirmation even when the browser blocks clipboard access.
+    }
+    window.setTimeout(() => setCopiedChannel(null), 1600);
+  };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const field = event.target.name as keyof ContactForm;
@@ -45,7 +56,7 @@ export default function Contact() {
   const mainChannels = [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/ouaadzouhair", icon: <FaLinkedin aria-hidden="true" /> },
     { label: "GitHub", href: "https://github.com/ouaadzouhair", icon: <FaGithub aria-hidden="true" /> },
-    { label: "Email", href: "mailto:ouaadzouhair11@gmail.com", icon: <FaEnvelope aria-hidden="true" /> },
+    { label: "Instagram", href: "https://www.instagram.com/zouhair_od.ma/", icon: <FaInstagram aria-hidden="true" /> },
   ];
 
   return (
@@ -181,12 +192,30 @@ export default function Contact() {
                 ))}
               </div>
               <div className={styles.extraChannels}>
-                <a href="https://instagram.com/zouhairouaad1" target="_blank" rel="noopener noreferrer">
-                  <FaInstagram aria-hidden="true" /> Instagram
-                </a>
-                <a href="tel:+212763835972">
-                  <FaPhone aria-hidden="true" /> {t("contact.phone")}
-                </a>
+                <span>
+                  <FaEnvelope aria-hidden="true" /> ouaadzouhair11@gmail.com
+                  <button
+                    type="button"
+                    className={`${styles.copyButton} ${copiedChannel === "email" ? styles.copyButtonCopied : ""}`}
+                    onClick={() => copyChannel("email", "ouaadzouhair11@gmail.com")}
+                    aria-label="Copy email address"
+                  >
+                    {copiedChannel === "email" ? <FiCheck aria-hidden="true" /> : <FiCopy aria-hidden="true" />}
+                    <span>{copiedChannel === "email" ? "Copied" : "Copy"}</span>
+                  </button>
+                </span>
+                <span>
+                  <FaPhone aria-hidden="true" /> +212 763 835 972
+                  <button
+                    type="button"
+                    className={`${styles.copyButton} ${copiedChannel === "phone" ? styles.copyButtonCopied : ""}`}
+                    onClick={() => copyChannel("phone", "+212 763 835 972")}
+                    aria-label="Copy phone number"
+                  >
+                    {copiedChannel === "phone" ? <FiCheck aria-hidden="true" /> : <FiCopy aria-hidden="true" />}
+                    <span>{copiedChannel === "phone" ? "Copied" : "Copy"}</span>
+                  </button>
+                </span>
               </div>
             </section>
 

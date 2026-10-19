@@ -19,6 +19,12 @@
     "next": "Next section",
     "sectionNavigation": "Section navigation"
   },
+  "documentTitles": {
+    "home": "Zouhair.ma",
+    "about": "About Me | Zouhair.ma",
+    "work": "Work | Zouhair.ma",
+    "contact": "Contact | Zouhair.ma"
+  },
   "hero": {
     "hello": "Hello_World",
     "title": "Web Developer",
@@ -39,6 +45,26 @@
     "philosophy": "Every project is a collaboration built on communication, creativity, and innovation. Always curious, I embrace new challenges to keep learning and growing."
   },
   "skills" : "skills",
+  "skillsSection": {
+    "description": "The technologies I use to design, build, ship, and maintain modern web experiences.",
+    "frontEnd": "Front-end",
+    "backEnd": "Back-end & Data",
+    "tools": "Tools & Platforms"
+  },
+  "workSection": {
+    "eyebrow": "PROJECT ARCHIVE // SELECTED BUILDS",
+    "title": "Selected Work",
+    "headingLead": "SELECTED",
+    "headingAccent": "WORK_",
+    "description": "A collection of web experiences built across full-stack systems, e-commerce, and focused front-end interfaces.",
+    "filtersLabel": "Filter projects",
+    "filters": {
+      "all": "All",
+      "fullStack": "Full-stack",
+      "frontEnd": "Front-end",
+      "ecommerce": "E-commerce"
+    }
+  },
   "projects": [
   {
     "title": "Epic7ata Store",

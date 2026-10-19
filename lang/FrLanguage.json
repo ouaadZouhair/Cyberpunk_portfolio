@@ -18,6 +18,12 @@
     "next": "Section suivante",
     "sectionNavigation": "Navigation entre sections"
   },
+  "documentTitles": {
+    "home": "Zouhair.ma",
+    "about": "À propos | Zouhair.ma",
+    "work": "Projets | Zouhair.ma",
+    "contact": "Contact | Zouhair.ma"
+  },
   "hero": {
     "hello": "Bonjour_Le_Monde",
     "title": "Développeur Web",
@@ -38,6 +44,26 @@
     "philosophy": "Chaque projet est une collaboration basée sur l’écoute, la créativité et l’innovation. Toujours curieux, je relève de nouveaux défis pour progresser et évoluer."
   },
   "skills": "COMPÉTENCES",
+  "skillsSection": {
+    "description": "Les technologies que j’utilise pour concevoir, développer, déployer et maintenir des expériences web modernes.",
+    "frontEnd": "Front-end",
+    "backEnd": "Back-end & Données",
+    "tools": "Outils & Plateformes"
+  },
+  "workSection": {
+    "eyebrow": "ARCHIVE PROJETS // SÉLECTION",
+    "title": "Projets sélectionnés",
+    "headingLead": "PROJETS",
+    "headingAccent": "SÉLECTIONNÉS_",
+    "description": "Une collection d’expériences web réalisées autour de systèmes full-stack, de l’e-commerce et d’interfaces front-end soignées.",
+    "filtersLabel": "Filtrer les projets",
+    "filters": {
+      "all": "Tous",
+      "fullStack": "Full-stack",
+      "frontEnd": "Front-end",
+      "ecommerce": "E-commerce"
+    }
+  },
 
   "projects": [
   {

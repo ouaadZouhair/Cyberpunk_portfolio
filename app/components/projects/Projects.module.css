@@ -1,0 +1,123 @@
+.projectsPage {
+  padding-top: clamp(24px, 5vw, 64px);
+}
+
+.header {
+  position: relative;
+  margin-bottom: 30px;
+  padding-bottom: clamp(24px, 4vw, 42px);
+  border-bottom: 1px solid rgba(0, 255, 231, 0.28);
+}
+
+.header::after {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: min(180px, 35%);
+  height: 2px;
+  background: var(--color-primary);
+  box-shadow: 0 0 12px rgba(0, 255, 231, 0.7);
+  content: "";
+}
+
+.header h1 {
+  margin: 0;
+  color: #fff;
+  font-family: var(--font-tech-local), monospace;
+  font-size: clamp(32px, 4.5vw, 50px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+}
+
+.header h1 span {
+  color: var(--color-primary);
+  text-shadow: 0 0 22px rgba(0, 230, 245, 0.2);
+}
+
+.description {
+  max-width: 690px;
+  margin: 18px 0 0;
+  color: rgba(224, 224, 224, 0.72);
+  font-size: clamp(0.9rem, 1.5vw, 1.08rem);
+  line-height: 1.65;
+}
+
+.filterBar {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: clamp(24px, 4vw, 38px);
+}
+
+.filterPrompt {
+  color: rgba(224, 224, 224, 0.5);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.filter,
+.activeFilter {
+  position: relative;
+  display: inline-flex;
+  gap: 11px;
+  align-items: center;
+  min-height: 36px;
+  padding: 7px 10px 7px 13px;
+  border: 1px solid rgba(0, 255, 231, 0.28);
+  background: rgba(0, 0, 0, 0.42);
+  color: rgba(224, 224, 224, 0.68);
+  font: 0.7rem var(--font-tech-local), monospace;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  transition: border-color 180ms ease, color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.filter sup,
+.activeFilter sup {
+  color: var(--color-highlight);
+  font-size: 0.55rem;
+}
+
+.filter:hover {
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+.activeFilter {
+  border-color: var(--color-primary);
+  background: rgba(0, 255, 231, 0.12);
+  color: var(--color-primary);
+  box-shadow: inset 3px 0 var(--color-secondary), 0 0 12px rgba(0, 255, 231, 0.1);
+}
+
+@media (max-width: 720px) {
+  .filterBar { display: block; }
+  .filterPrompt {
+    display: block;
+    margin-bottom: 12px;
+  }
+  .filters { justify-content: flex-start; }
+}
+
+@media (max-width: 420px) {
+  .filter,
+  .activeFilter {
+    flex: 1 1 calc(50% - 8px);
+    justify-content: space-between;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .filter,
+  .activeFilter { transition: none; }
+}

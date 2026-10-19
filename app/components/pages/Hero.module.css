@@ -93,11 +93,12 @@
 .secondaryButton svg { color: #00dcea; }
 .button:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 4px; }
 .avatar {
+  order: -1;
   display: block;
-  width: auto;
+  width: min(100%, 420px);
   height: auto;
-  max-width: min(100%, 354px);
-  max-height: min(40svh, 390px);
+  max-width: none;
+  max-height: none;
   object-fit: contain;
   margin-inline: auto;
   animation: avatarFloat 4.8s ease-in-out infinite;
@@ -115,8 +116,7 @@
 
 @media (min-width: 640px) {
   .avatar {
-    max-width: min(100%, 404px);
-    max-height: min(44svh, 460px);
+    width: min(88vw, 600px);
   }
 }
 
@@ -130,6 +130,8 @@
   }
 
   .avatar {
+    order: 0;
+    width: auto;
     max-width: min(100%, 464px);
     max-height: calc(100svh - var(--navbar-clearance) - 18px);
   }
